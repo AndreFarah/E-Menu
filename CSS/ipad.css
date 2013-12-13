@@ -1,0 +1,320 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+h2
+{
+	padding: 1em 0 0 0;
+}
+p
+{
+	line-height: 1.4em;
+}
+p + p
+{
+	text-indent: 2em;
+}
+body
+{
+	font-size: 100%;
+	text-align: center;
+	background: #ddd;
+}
+pre
+{
+	display: block;
+	margin: 1em 0 0 0;
+	width: 488px;
+}
+pre code
+{
+	background: #eee;
+	display: block;
+	padding: 10px;
+}
+.r
+{
+	float: right;
+	padding: 0 0 10px 20px;
+}
+
+/* Landscape mode (default) */
+#wrap
+{
+	margin: 0 auto;
+	width: 1024px;
+	position: relative;
+	overflow: hidden;
+	text-align: left;
+	background: #fff;
+}
+#header
+{
+	float: left;
+	width: 1024px;
+	padding: 10px 0 20px 0;
+	background: #fff;
+	border-bottom: 1px solid #000;
+}
+#header h1
+{
+	padding: 10px 30px 0 30px;
+}
+#header p
+{
+	padding: 0 30px;
+	line-height: 1.4em;
+}
+#content
+{
+	float: left;
+	width: 1024px;
+	background: #eee;
+	position: relative;
+	left: 768px;
+}
+#main
+{
+	float: left;
+	width: 708px;
+	position: relative;
+	right: 738px;
+	padding: 20px 0;
+}
+#side
+{
+	float: right;
+	width: 216px;
+	position: relative;
+	right: 788px;
+	padding-bottom: 20px;
+}
+#sidea, #sideb, #sidec
+{
+	clear: left;
+	float: left;
+	width: 216px;
+}
+#footer
+{
+	clear: both;
+	float: left;
+	width: 1024px;
+	border-top: 1px solid #000;
+	background: #ddd;
+}
+#footer p
+{
+	padding: 20px 30px;
+}
+
+@media only screen and (orientation:portrait)
+{
+	/* portrait mode */
+	#header, #wrap, #footer
+	{
+		width: 768px;
+	}
+	#content
+	{
+		left: 0;
+		background: #fff;
+	}
+	#main
+	{
+		float: left;
+		width: 708px;
+		position: relative;
+		right: 0;
+		left: 30px;
+		padding: 20px 0;
+	}
+	#side
+	{
+		clear: left;
+		float: left;
+		width: 768px;
+		right: 0;
+		padding-bottom: 20px;
+		background: #eee;
+	}
+	#sidea
+	{
+		clear: none;
+		width: 216px;
+		float: left;
+		position: relative;
+		left: 30px;
+		padding-top: 20px;
+	}
+	#sideb
+	{
+		clear: none;
+		width: 216px;
+		float: left;
+		position: relative;
+		left: 60px;
+		padding-top: 20px;
+	}
+	#sidec
+	{
+		clear: none;
+		width: 216px;
+		float: right;
+		position: relative;
+		right: 30px;
+		padding-top: 20px;
+	}
+	
+	 .viewWrap
+		{
+			padding: 15px;
+			background: #2291b5 0 0 url(Img/bluegradient.gif) repeat-x;
+		}
+		.contactWrap
+		{
+			padding: 10px 15px 15px 15px;
+			background: #fff;
+			color: #333;
+		}
+		.contactWrap td
+		{
+			padding: 0 20px 0 0;
+		}
+		.contactWrap td td
+		{
+			padding: 3px 20px 3px 0;
+		}
+		.contactWrap img
+		{
+			border: 1px solid #05679d;
+		}
+}
+
+
+div.login-block
+{
+	position: absolute;
+	text-align: left;
+	margin: -140px 10px 10px -170px;
+	padding: 0px 0px 0px 0px;
+	top: 50%;
+	left: 50%;
+	width: 344px;
+	height: 350px;
+	background-image: url('../Images/logo-bg.png');
+	background-repeat: no-repeat;
+	background-position: top;
+	background-color: #77787b;
+	color: #ffffff;
+}
+
+div.login-block table.login-table-container
+{
+	margin: 120px 20px 0px 70px;
+}
+
+
+.login-table-container .forgot-password a
+{
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	SERVER CONTROLS
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+.adminButtonBlue
+{
+	background: url(../Images/blue_button_bg.gif) no-repeat 25% 50% #333;
+	border: 1px solid #0f72ac;
+	margin-bottom: 3px;
+	color: #FFF;
+	padding: 0 10px 0 10px;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+
+/*.adminButton
+{
+	background: url(images/grey_button_bg.gif) no-repeat 25% 50% #333;
+	border: 1px solid #333;
+	margin-bottom: 3px;
+	color: #FFF;
+	text-align: right;
+	height: 20px;
+	padding: 0 10px 0 10px;
+	font-size: 11px;
+	font-weight: bold;
+}*/
+
+.adminInput
+{
+	border: 1px solid #acacac;
+	width: 250px;
+}
+
+.adminInputNoWidth
+{
+	border: 1px solid #acacac;
+}
+
+label
+{
+	padding-left: 3px;
+}
+
+
+.LableStyle
+{
+	color: #0000FF;
+	font-size: medium;
+}
+
+
+body
+{
+	font-family: arial, verdana, helvetica, sans-serif;
+	font-size: 12px;
+}
+
+
+td
+{
+	/*vertical-align: middle; */
+}
+
+td.fieldname
+{
+	font-size: 12px;
+}
+
+.table-container
+{
+}
+
+.table-container .row
+{
+}
+
+.table-container .row .item-name
+{
+	padding: 3px 10px 0px 0px;
+	display: block;
+	white-space: nowrap;
+	padding-right: 10px;
+	vertical-align: middle;
+}
+
+.table-container .row .item-value
+{
+	padding: 3px 0px 0px 0px;
+	vertical-align: middle;
+}

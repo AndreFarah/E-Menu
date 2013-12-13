@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="restaurantpos" EntityNamespace="RestaurantpoContext" ContextNamespace="RestaurantpoContext" Class="DCDC" Guid="05776116-b875-41e6-baa1-eb50bab0dd6f" Provider="Devart.Data.MySql.Linq.Provider.MySqlDataProvider, Devart.Data.MySql.Linq" Extended="true" xmlns="http://schemas.devart.com/linqconnect/mapping">
+  <Connection Mode="ConnectionString" ConnectionString="User Id=root;Password=1234;Host=localhost;Port=3307;Database=restaurantpos;Persist Security Info=True" Provider="Devart.Data.MySql" />
+  <Table Name="restaurantpos.tblcounter" Member="Tblcounters">
+    <Type Name="Tblcounter" Guid="24f0fcef-0f1f-4d16-acf0-2e2209799ba6">
+      <Column Name="CounterCode" Member="Countercode" Type="System.String" DbType="VARCHAR(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" DefaultValue="''" MaxLength="255" Guid="96a36e54-47c6-4470-a52c-53e4e1c20f36" />
+      <Column Name="RevenueCenterCode" Member="Revenuecentercode" Type="System.String" DbType="VARCHAR(20) NOT NULL" CanBeNull="false" DefaultValue="All" MaxLength="20" Guid="a67593e5-d76e-4863-9e03-765d2365750a" />
+      <Column Name="CounterDescription" Member="Counterdescription" Type="System.String" DbType="LONGTEXT" CanBeNull="true" UpdateCheck="Never" Guid="f1bd1fab-180f-4795-89c2-3da28e653726" />
+      <Column Name="CounterPassword" Member="Counterpassword" Type="System.String" DbType="TINYTEXT" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Guid="ce49c02a-451d-4262-a6a1-f86b98178d6e" />
+      <Column Name="ShiftControl" Member="Shiftcontrol" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="False" MaxLength="255" Guid="33b93737-3e60-4f7b-ba6b-442a9d3ae81f" />
+      <Column Name="EODControl" Member="Eodcontrol" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="False" MaxLength="255" Guid="03ab931c-2284-439a-bb08-b926f27790f5" />
+      <Column Name="IsPocketPCTerminal" Member="Ispocketpcterminal" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="False" MaxLength="255" Guid="a01f0ebf-501b-46c3-8d06-ef64b2ab9398" />
+      <Column Name="PocketPCTerminalActivationCode" Member="Pocketpcterminalactivationcode" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="''" MaxLength="255" Guid="d415d65e-156d-47e0-9863-64eac0430ba5" />
+    </Type>
+  </Table>
+  <Table Name="restaurantpos.tblemployee" Member="Tblemployees">
+    <Type Name="Tblemployee" Guid="42051af0-fdf8-48cd-b700-24f4e9e3dd06">
+      <Column Name="EmployeeCode" Member="Employeecode" Type="System.String" DbType="VARCHAR(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" DefaultValue="''" MaxLength="255" Guid="d1dd05c4-86b2-4ca8-ab8e-538f69d8364a" />
+      <Column Name="EmployeeName" Member="Employeename" Type="System.String" DbType="LONGTEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Guid="3bb99f66-5906-4cb8-baf3-7663dec8a0ff" />
+      <Column Name="EmployeeDetails" Member="Employeedetails" Type="System.String" DbType="LONGTEXT" CanBeNull="true" UpdateCheck="Never" Guid="fe61c2b9-caa7-4801-99ba-a4c0e8b3c782" />
+      <Column Name="UserGroupCode" Member="Usergroupcode" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="''" MaxLength="255" Guid="a580f819-e5d9-443e-b386-4e4fc2faf466" />
+      <Column Name="PayrollGroupCode" Member="Payrollgroupcode" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" MaxLength="255" Guid="9dd4508a-b29d-400d-a4e2-37428a4db0d5" />
+      <Column Name="UserPIN" Member="Userpin" Type="System.String" DbType="TINYTEXT" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Guid="85e5d0c5-42e8-49e6-abc7-d21bf3a9eac6" />
+      <Column Name="ActivityStatus" Member="Activitystatus" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="''" MaxLength="255" Guid="f70147df-0637-470a-9f1c-b09933ca1c89" />
+    </Type>
+  </Table>
+  <Table Name="restaurantpos.tblfoodbeverage" Member="Tblfoodbeverages">
+    <Type Name="Tblfoodbeverage" Guid="0babad8a-f993-4ce2-9fb0-95d62fb0384b">
+      <Column Name="FoodBeverageCode" Member="Foodbeveragecode" Type="System.String" DbType="VARCHAR(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" DefaultValue="''" MaxLength="255" Guid="61338bcc-bab6-4dc3-900a-bc342d91bc93" />
+      <Column Name="GroupCode" Member="Groupcode" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" MaxLength="255" Guid="299fdf52-be9e-4f64-90fd-8b36a6a097c4" />
+      <Column Name="FoodBeverageDescription" Member="Foodbeveragedescription" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" MaxLength="255" Unicode="true" Guid="f569a640-cbea-4533-a3ef-b7b8864a6a79" />
+      <Column Name="FoodBeverageAlternateDescription" Member="Foodbeveragealternatedescription" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="''" MaxLength="255" Unicode="true" Guid="5144b216-058b-4d77-97ff-15982812da57" />
+      <Column Name="FoodBeverageAllowItemDiscount" Member="Foodbeverageallowitemdiscount" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="True" MaxLength="255" Guid="78a2e9e7-6657-4796-adbd-f83a6fe00405" />
+      <Column Name="FoodBeverageAllowTotalDiscount" Member="Foodbeverageallowtotaldiscount" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="True" MaxLength="255" Guid="b9ae019e-2e4d-4556-9c88-099242d27a92" />
+      <Column Name="FoodBeverageRequirePriorityOnCancellation" Member="Foodbeveragerequirepriorityoncancellation" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="True" MaxLength="255" Guid="cba90002-5ac8-4525-b577-f7542106fa95" />
+      <Column Name="FoodBeverageTimeBillingDuration" Member="Foodbeveragetimebillingduration" Type="System.Int32" DbType="INT(10)" CanBeNull="true" DefaultValue="0" MaxLength="0" Precision="10" Scale="0" Guid="18cd8820-8476-45d9-8ef6-61cd9e0f3f28" />
+      <Column Name="FoodBeveragePreparationDuration" Member="Foodbeveragepreparationduration" Type="System.Int32" DbType="INT(10)" CanBeNull="true" DefaultValue="0" MaxLength="0" Precision="10" Scale="0" Guid="943720b0-3751-40c1-82cf-b9045f7a5048" />
+      <Column Name="FoodBeverageShowOnPOS" Member="Foodbeverageshowonpos" Type="System.String" DbType="VARCHAR(5) NOT NULL" CanBeNull="false" DefaultValue="True" MaxLength="5" Guid="6e8af1b0-b22e-43b8-9082-04c00e2ec697" />
+      <Column Name="FoodBeverageIsWeighingItem" Member="Foodbeverageisweighingitem" Type="System.String" DbType="VARCHAR(5) NOT NULL" CanBeNull="false" DefaultValue="False" MaxLength="5" Guid="497c1233-19c6-4298-88e0-b064d5eb944d" />
+      <Column Name="FoodBeveragePrice" Member="Foodbeverageprice" Type="System.Double" DbType="DOUBLE(15,3)" CanBeNull="true" MaxLength="0" Precision="15" Scale="3" Guid="8f3b3605-5b2d-471b-9cfd-0b918b2ded87" />
+      <Column Name="FoodBeverageHappyHourPrice" Member="Foodbeveragehappyhourprice" Type="System.Double" DbType="DOUBLE(15,3)" CanBeNull="true" DefaultValue="0.000" MaxLength="0" Precision="15" Scale="3" Guid="a6bb2747-c4c7-47f2-82d7-1d33abba2fb7" />
+      <Column Name="FoodBeverageSecondHappyHourPrice" Member="Foodbeveragesecondhappyhourprice" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="7c49aa63-5d26-450b-ad97-5c6bd35f9f39" />
+      <Column Name="FoodBeverageThirdHappyHourPrice" Member="Foodbeveragethirdhappyhourprice" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="f00243f1-0525-4115-aaab-208e676f5fb8" />
+      <Column Name="FoodBeverageHappyHourPercentage" Member="Foodbeveragehappyhourpercentage" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="2f3a39b7-01d2-41e4-824a-9c81d7f414b5" />
+      <Column Name="FoodBeverageSecondHappyHourPercentage" Member="Foodbeveragesecondhappyhourpercentage" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="aa05519d-9ed8-4338-bce4-16796e0d4825" />
+      <Column Name="FoodBeverageThirdHappyHourPercentage" Member="Foodbeveragethirdhappyhourpercentage" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="307fab01-13cd-4151-974d-91c64e468f09" />
+      <Column Name="FoodBeverageMemberPrice1" Member="Foodbeveragememberprice1" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="ad1c5422-cda6-4d43-aa28-25debe95af4f" />
+      <Column Name="FoodBeverageMemberPrice2" Member="Foodbeveragememberprice2" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="45d8058a-123c-4e2b-bad8-ee3ce37dcf39" />
+      <Column Name="FoodBeverageMemberPrice3" Member="Foodbeveragememberprice3" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="e2eb5f27-70d9-4b0c-b86d-21787ff08f30" />
+      <Column Name="FoodBeverageMemberPrice4" Member="Foodbeveragememberprice4" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="2ac52aaf-3fae-4aa0-9090-668f2fa3cd87" />
+      <Column Name="FoodBeverageMemberPoint" Member="Foodbeveragememberpoint" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="e502993b-7896-47f2-9e6f-0ffa50e03df1" />
+      <Column Name="FoodBeveragePicture" Member="Foodbeveragepicture" Type="System.Byte[]" DbType="LONGBLOB" CanBeNull="true" UpdateCheck="Never" Guid="380674f2-70c2-4b5e-9051-2c310637d406" />
+      <Column Name="FoodBeverageKitchenOrderPrintingDestination" Member="Foodbeveragekitchenorderprintingdestination" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="''" MaxLength="255" Guid="559b90ab-38a7-4bc6-9bd2-a99d202a1179" />
+      <Column Name="FoodBeveragePrintOnOrderList" Member="Foodbeverageprintonorderlist" Type="System.String" DbType="VARCHAR(10)" CanBeNull="true" DefaultValue="True" MaxLength="10" Guid="b7b397b4-a9ba-40c2-bdc4-7078eb81ced5" />
+      <Column Name="FoodBeveragePrintOnKitchenOrderList" Member="Foodbeverageprintonkitchenorderlist" Type="System.String" DbType="VARCHAR(10)" CanBeNull="true" DefaultValue="True" MaxLength="10" Guid="4b27e1a9-9e4d-4cec-8057-2c7fc89df9d6" />
+      <Column Name="FoodBeveragePrintOnBarOrderList" Member="Foodbeverageprintonbarorderlist" Type="System.String" DbType="VARCHAR(10)" CanBeNull="true" DefaultValue="True" MaxLength="10" Guid="f0b960f1-0f99-4439-aeb0-b88ef9b0c66b" />
+      <Column Name="FoodBeverageInvisibleDay" Member="Foodbeverageinvisibleday" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="''" MaxLength="255" Guid="dcb6f709-abc0-41a2-a4a5-69dada6da039" />
+      <Column Name="FoodBeverageVATScheme" Member="Foodbeveragevatscheme" Type="System.String" DbType="VARCHAR(20)" CanBeNull="true" DefaultValue="Not Applied" MaxLength="20" Guid="96eca335-4b1a-4ec7-8aa2-6973b81a3d90" />
+      <Column Name="FoodBeverageLocalTax" Member="Foodbeveragelocaltax" Type="System.String" DbType="VARCHAR(20)" CanBeNull="true" DefaultValue="False" MaxLength="20" Guid="fdfdc323-480e-4e88-ad31-5bf673a5d16e" />
+      <Column Name="FoodBeverageAvailable" Member="Foodbeverageavailable" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="True" MaxLength="255" Guid="813860bf-fd80-4aab-9be9-5e0a6e3d07f0" />
+      <Column Name="FoodBeverageIsNettPrice" Member="Foodbeverageisnettprice" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="False" MaxLength="255" Guid="5c8d7480-b1c2-47f5-98c6-11bdbe38e779" />
+      <Column Name="FoodBeverageWaiveGovernmentTax" Member="Foodbeveragewaivegovernmenttax" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="False" MaxLength="255" Guid="0b63a304-1775-4bac-b441-df6246f80213" />
+      <Column Name="FoodBeverageWaiveServiceCharge" Member="Foodbeveragewaiveservicecharge" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="False" MaxLength="255" Guid="ae83db08-3398-4d83-ac6b-ab5086a9c9ef" />
+      <Column Name="FoodBeverageIsCashVoucher" Member="Foodbeverageiscashvoucher" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="False" MaxLength="255" Guid="9f612b4d-f222-4933-8425-c3c23df9d30d" />
+      <Column Name="FoodBeverageIsPaxControl" Member="Foodbeverageispaxcontrol" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="False" MaxLength="255" Guid="2f5ceaaa-f6d5-458d-bf96-86d1aa3654cf" />
+      <Column Name="FoodBeverageInvisibleTimingFrom" Member="Foodbeverageinvisibletimingfrom" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" DefaultValue="00:00:00" MaxLength="0" Guid="ed430dde-f190-430e-ac56-50831fa25338" />
+      <Column Name="FoodBeverageInvisibleTimingTo" Member="Foodbeverageinvisibletimingto" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" DefaultValue="00:00:00" MaxLength="0" Guid="14fa850f-4708-443e-b1d2-153c45970fc2" />
+      <Column Name="FoodBeverageTableOccupationPeriod" Member="Foodbeveragetableoccupationperiod" Type="System.Int32" DbType="INT(10)" CanBeNull="true" DefaultValue="0" MaxLength="0" Precision="10" Scale="0" Guid="8bcebed5-d22b-4217-82de-953f0d5774b9" />
+      <Association Name="Tblfoodbeveragegroup_Tblfoodbeverage" AssociationGuid="870369fb-064d-4ac2-a97c-91527e91b443" Member="Tblfoodbeveragegroup" Guid="3e916f7e-a3b6-45a9-8665-b15c965c491c" ThisKey="Groupcode" OtherKey="Groupcode" Type="Tblfoodbeveragegroup" IsForeignKey="true" />
+      <Association Name="Tblfoodbeverage_Tblfoodbeveragerequest" AssociationGuid="24bf906e-1bd8-4dad-b495-2f5410cdb34c" Member="Tblfoodbeveragerequests" Guid="6d4564db-6847-46df-a55e-ebd0da43cefe" ThisKey="Foodbeveragecode" OtherKey="Foodbeveragecode" Type="Tblfoodbeveragerequest" />
+      <Association Name="Tblfoodbeverage_Tblfoodbeveragerequestrule" AssociationGuid="110b94b1-dc0a-434f-a577-56773eb3b225" Member="Tblfoodbeveragerequestrules" Guid="ff33261a-a91e-46b9-8111-bad1298be83d" ThisKey="Foodbeveragecode" OtherKey="Foodbeveragecode" Type="Tblfoodbeveragerequestrule" />
+      <Association Name="Tblfoodbeverage_Tblfoodbeveragepurchasewithpurchaserule" AssociationGuid="f5840813-b511-4041-ab5d-fc5f7615f521" Member="Tblfoodbeveragepurchasewithpurchaserules" Guid="8183aa5e-967e-425e-99a3-45f24fac748d" ThisKey="Foodbeveragecode" OtherKey="Foodbeveragecode" Type="Tblfoodbeveragepurchasewithpurchaserule" />
+      <Association Name="Tblfoodbeverage_Tblfoodbeveragepwpitem" AssociationGuid="b678f669-63a8-4bbc-a4d1-34f3fcc85771" Member="Tblfoodbeveragepwpitems" Guid="042446d5-29a5-4389-b0cd-69c606a5a584" ThisKey="Foodbeveragecode" OtherKey="Foodbeveragecode" Type="Tblfoodbeveragepwpitem" />
+      <Association Name="Tblfoodbeverage_Tblfoodbeveragepwpitem1" AssociationGuid="718e9964-8591-4db9-b033-9cac10634e80" Member="Tblfoodbeveragepwpitems1" Guid="1a28eef6-8c6b-4242-ae6b-bbfdafd2c01b" ThisKey="Foodbeveragecode" OtherKey="Foodbeveragepwpitemcode" Type="Tblfoodbeveragepwpitem" />
+    </Type>
+  </Table>
+  <Table Name="restaurantpos.tblfoodbeveragegroup" Member="Tblfoodbeveragegroups">
+    <Type Name="Tblfoodbeveragegroup" Guid="37bf9aa4-0027-481a-b7e5-d0d7a2d89a84">
+      <Column Name="GroupCode" Member="Groupcode" Type="System.String" DbType="VARCHAR(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" DefaultValue="''" MaxLength="255" Guid="62501765-8c04-4ee8-ad3b-6d94ef306788" />
+      <Column Name="GroupDescription" Member="Groupdescription" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" MaxLength="255" Unicode="true" Guid="0f418313-3899-4e82-bc09-c2b50bf9bd00" />
+      <Column Name="GroupAlternateDescription" Member="Groupalternatedescription" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="''" MaxLength="255" Unicode="true" Guid="2c5f84a7-22ea-491c-88f4-21f6b756cae5" />
+      <Column Name="GroupMenuType" Member="Groupmenutype" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" MaxLength="255" Guid="d06b018b-15f3-4b32-bac8-3d26a2b554f7" />
+      <Column Name="GroupPicture" Member="Grouppicture" Type="System.Byte[]" DbType="LONGBLOB" CanBeNull="true" UpdateCheck="Never" Guid="d09750bc-8dde-46a2-9ea5-cb936ee80462" />
+      <Column Name="GroupAvailable" Member="Groupavailable" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="True" MaxLength="255" Guid="4aaf2b94-f91e-4598-8a11-7878ae2f5dbf" />
+      <Association Name="Tblfoodbeveragegroup_Tblfoodbeverage" AssociationGuid="870369fb-064d-4ac2-a97c-91527e91b443" Member="Tblfoodbeverages" Guid="ad4b0672-f33a-41f8-8fb5-9bc1e5bc0ec5" ThisKey="Groupcode" OtherKey="Groupcode" Type="Tblfoodbeverage" />
+      <Association Name="Tblfoodbeveragemenutype_Tblfoodbeveragegroup" AssociationGuid="c7f2c7ca-5edb-4b7f-86a1-e17389a65dd4" Member="Tblfoodbeveragemenutype" Guid="321bd31f-3010-49f5-9dea-2bf9216b9270" ThisKey="Groupmenutype" OtherKey="Groupmenutype" Type="Tblfoodbeveragemenutype" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="restaurantpos.tblfoodbeveragemenutype" Member="Tblfoodbeveragemenutypes">
+    <Type Name="Tblfoodbeveragemenutype" Guid="a7b9f901-fe7a-43ce-bde0-4557a49b33db">
+      <Column Name="GroupMenuType" Member="Groupmenutype" Type="System.String" DbType="VARCHAR(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" DefaultValue="''" MaxLength="255" Guid="ea10a32f-ac5a-48a2-82dc-3a8e62706e5a" />
+      <Association Name="Tblfoodbeveragemenutype_Tblfoodbeveragegroup" AssociationGuid="c7f2c7ca-5edb-4b7f-86a1-e17389a65dd4" Member="Tblfoodbeveragegroups" Guid="bdf7764c-8ceb-4dcf-8602-acbdcfc3a20e" ThisKey="Groupmenutype" OtherKey="Groupmenutype" Type="Tblfoodbeveragegroup" />
+    </Type>
+  </Table>
+  <Table Name="restaurantpos.tblfoodbeveragerequest" Member="Tblfoodbeveragerequests">
+    <Type Name="Tblfoodbeveragerequest" Guid="d9d980fd-7460-4a7d-a83e-aabea1496393">
+      <Column Name="FoodBeverageRequestPK" Member="Foodbeveragerequestpk" Type="System.Int32" AutoSync="OnInsert" DbType="INT(10) NOT NULL AUTO_INCREMENT" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" MaxLength="0" Precision="10" Scale="0" Guid="3ff51417-83ce-475d-b006-e9e51cc09a88" />
+      <Column Name="FoodBeverageCode" Member="Foodbeveragecode" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="''" MaxLength="255" Guid="fc4c40e8-a537-45b1-9fc1-0c33d5dfa5e7" />
+      <Column Name="FoodBeverageRequest" Member="Foodbeveragerequest" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="''" MaxLength="255" Unicode="true" Guid="b0cc6d98-24bf-4bd1-a620-1d57df753c36" />
+      <Column Name="FoodBeverageRequestBatch" Member="Foodbeveragerequestbatch" Type="System.Int32" DbType="INT(10) NOT NULL" CanBeNull="false" DefaultValue="1" MaxLength="0" Precision="10" Scale="0" Guid="88edc5e2-35aa-47dd-a3bb-8fd6b9cf1448" />
+      <Column Name="FoodBeverageRequestPrice" Member="Foodbeveragerequestprice" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="acd8874c-f8b6-4068-a4fa-96c20259d7da" />
+      <Column Name="FoodBeverageRequestPicture" Member="Foodbeveragerequestpicture" Type="System.Byte[]" DbType="LONGBLOB" CanBeNull="true" UpdateCheck="Never" Guid="420d83ea-cf10-4a2f-97ab-fdcc63755eed" />
+      <Column Name="IsOpenPrice" Member="Isopenprice" Type="System.String" DbType="VARCHAR(10)" CanBeNull="true" DefaultValue="False" MaxLength="10" Guid="e89188c7-64b9-4317-92da-f45e2ad970ee" />
+      <Column Name="FoodBeverageRequestShortcutKey" Member="Foodbeveragerequestshortcutkey" Type="System.String" DbType="VARCHAR(30)" CanBeNull="true" DefaultValue="''" MaxLength="30" Guid="442ad605-bc04-4586-a9fe-e33e2484c157" />
+      <Association Name="Tblfoodbeverage_Tblfoodbeveragerequest" AssociationGuid="24bf906e-1bd8-4dad-b495-2f5410cdb34c" Member="Tblfoodbeverage" Guid="a958409c-24ec-415b-bcbd-bb7f50475e91" ThisKey="Foodbeveragecode" OtherKey="Foodbeveragecode" Type="Tblfoodbeverage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="restaurantpos.tblfoodbeveragerequestrules" Member="Tblfoodbeveragerequestrules">
+    <Type Name="Tblfoodbeveragerequestrule" Guid="e002c596-3ec1-413d-852c-c8cdc3ef9180">
+      <Column Name="FoodBeverageRequestRulesPK" Member="Foodbeveragerequestrulespk" Type="System.Int32" AutoSync="OnInsert" DbType="INT(10) NOT NULL AUTO_INCREMENT" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" MaxLength="0" Precision="10" Scale="0" Guid="b5ab4bca-82ed-4232-8a21-10874df21eaf" />
+      <Column Name="FoodBeverageCode" Member="Foodbeveragecode" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="''" MaxLength="255" Guid="7ccbcc5a-6e0f-459c-b87c-640662565bc4" />
+      <Column Name="FoodBeverageRequestBatch" Member="Foodbeveragerequestbatch" Type="System.Int32" DbType="INT(10) NOT NULL" CanBeNull="false" DefaultValue="1" MaxLength="0" Precision="10" Scale="0" Guid="a230118b-b49d-4454-967a-9bdc7c3b4496" />
+      <Column Name="FoodBeverageRequestRulesCondition" Member="Foodbeveragerequestrulescondition" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="At Least" MaxLength="255" Guid="bbdba278-1dc5-4987-9ece-e97c094de594" />
+      <Column Name="FoodBeverageRequestRulesNumber" Member="Foodbeveragerequestrulesnumber" Type="System.Int32" DbType="INT(10)" CanBeNull="true" DefaultValue="0" MaxLength="0" Precision="10" Scale="0" Guid="398256fc-0f16-4d45-8436-6001a817398a" />
+      <Association Name="Tblfoodbeverage_Tblfoodbeveragerequestrule" AssociationGuid="110b94b1-dc0a-434f-a577-56773eb3b225" Member="Tblfoodbeverage" Guid="87efe191-ca84-4185-8c33-6c7e21df44ad" ThisKey="Foodbeveragecode" OtherKey="Foodbeveragecode" Type="Tblfoodbeverage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="restaurantpos.tbltable" Member="Tbltables">
+    <Type Name="Tbltable" Guid="588930da-1991-4a8e-8f77-810fa43a8c07">
+      <Column Name="TableName" Member="Tablename" Type="System.String" DbType="VARCHAR(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" DefaultValue="''" MaxLength="255" Guid="8f41e6ac-533d-4818-baf1-1f0ae6636492" />
+      <Column Name="TableDescription" Member="Tabledescription" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" MaxLength="255" Unicode="true" Guid="470a25ab-4158-4af0-8638-d699be1ee1aa" />
+      <Column Name="PlanName" Member="Planname" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" MaxLength="255" Guid="00ac7bf6-6049-4359-b141-1f2f62f7d3cf" />
+      <Column Name="XAxis" Member="Xaxis" Type="System.Int32" DbType="INT(10)" CanBeNull="true" DefaultValue="0" MaxLength="0" Precision="10" Scale="0" Guid="e95b9e67-5436-4090-ba88-aa6aec2cc279" />
+      <Column Name="YAxis" Member="Yaxis" Type="System.Int32" DbType="INT(10)" CanBeNull="true" DefaultValue="0" MaxLength="0" Precision="10" Scale="0" Guid="a5856453-33c4-4e59-acee-00b60e620dee" />
+      <Column Name="MoveToTableName" Member="Movetotablename" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="''" MaxLength="255" Guid="b590fa4b-9176-4738-95c0-cb0030a7a7e5" />
+      <Column Name="TableSize" Member="Tablesize" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="Large" MaxLength="255" Guid="0d630022-c837-4019-9d26-5c93ace7fecf" />
+      <Column Name="TablePattern" Member="Tablepattern" Type="System.String" DbType="VARCHAR(10)" CanBeNull="true" DefaultValue="0" MaxLength="10" Guid="43ae3ecd-6b68-4b00-a153-8f904498cbbd" />
+      <Column Name="TableStillOccupied" Member="Tablestilloccupied" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="False" MaxLength="255" Guid="30cc0c81-b3ed-4f90-8408-30eb17132baf" />
+      <Column Name="TableDeleteAfterPayment" Member="Tabledeleteafterpayment" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="False" MaxLength="255" Guid="0b2091e1-eb43-40ae-8bce-785623bd79fa" />
+      <Column Name="NFTimeBillingRateType" Member="Nftimebillingratetype" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="''" MaxLength="255" Guid="ac150f36-1419-47a5-97fa-93a6ecc22fa8" />
+      <Column Name="NFOpenSignal" Member="Nfopensignal" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="''" MaxLength="255" Guid="092cf718-1295-4030-b1ac-19e08d456407" />
+      <Column Name="NFCloseSignal" Member="Nfclosesignal" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="''" MaxLength="255" Guid="e4172420-eff5-4b90-8bbd-99c33fa2b743" />
+      <Column Name="NFOpeningTime" Member="Nfopeningtime" Type="System.DateTime" DbType="DATETIME" CanBeNull="true" MaxLength="0" Guid="83316171-85a9-4526-bf39-fa3eb68edc07" />
+      <Column Name="NFDefaultHour" Member="Nfdefaulthour" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="be67b24f-361c-4d57-be64-ecb5ce241080" />
+      <Column Name="KTVTimeBillingRateType" Member="Ktvtimebillingratetype" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="''" MaxLength="255" Guid="541eab89-103e-497f-9bae-495f140c6a54" />
+      <Column Name="KTVBlockBillingRateType" Member="Ktvblockbillingratetype" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="''" MaxLength="255" Guid="d13e6352-3540-462d-a16a-a2139e384a7b" />
+      <Column Name="KTVSongBillingRateType" Member="Ktvsongbillingratetype" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" DefaultValue="''" MaxLength="255" Guid="716226f6-6798-4be6-9f06-8ad6d844fad9" />
+    </Type>
+  </Table>
+  <Table Name="restaurantpos.tblfoodbeveragepurchasewithpurchaserules" Member="Tblfoodbeveragepurchasewithpurchaserules">
+    <Type Name="Tblfoodbeveragepurchasewithpurchaserule" Guid="0acd646d-447b-4abb-8ef8-be29b7f24739">
+      <Column Name="FoodBeveragePurchaseWithPurchaseRulesPK" Member="Foodbeveragepurchasewithpurchaserulespk" Type="System.Int32" AutoSync="OnInsert" DbType="INT(10) NOT NULL AUTO_INCREMENT" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" MaxLength="0" Precision="10" Scale="0" Guid="63cac79b-d199-4908-9ff7-4f0eaf6e5cea" />
+      <Column Name="FoodBeverageCode" Member="Foodbeveragecode" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="''" MaxLength="255" Guid="fbc03154-150c-4435-881d-29a09591fec9" />
+      <Column Name="FoodBeveragePurchaseWithPurchaseBatch" Member="Foodbeveragepurchasewithpurchasebatch" Type="System.Int32" DbType="INT(10) NOT NULL" CanBeNull="false" DefaultValue="1" MaxLength="0" Precision="10" Scale="0" Guid="eea4426d-2f41-4242-955b-4b70701f15a4" />
+      <Column Name="FoodBeveragePurchaseWithPurchaseRulesCondition" Member="Foodbeveragepurchasewithpurchaserulescondition" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="At Least" MaxLength="255" Guid="56ad2c10-845e-425a-b837-b39217066e86" />
+      <Column Name="FoodBeveragePurchaseWithPurchaseRulesNumber" Member="Foodbeveragepurchasewithpurchaserulesnumber" Type="System.Int32" DbType="INT(10)" CanBeNull="true" DefaultValue="0" MaxLength="0" Precision="10" Scale="0" Guid="0514aca5-34a6-42b1-85b7-e2adf81860e1" />
+      <Association Name="Tblfoodbeverage_Tblfoodbeveragepurchasewithpurchaserule" AssociationGuid="f5840813-b511-4041-ab5d-fc5f7615f521" Member="Tblfoodbeverage" Guid="924cf5f1-fb75-4414-a995-e2f05b79022d" ThisKey="Foodbeveragecode" OtherKey="Foodbeveragecode" Type="Tblfoodbeverage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="restaurantpos.tblfoodbeveragepwpitems" Member="Tblfoodbeveragepwpitems">
+    <Type Name="Tblfoodbeveragepwpitem" Guid="2a2d9265-05c9-4e89-a2c3-0a4ecf840669">
+      <Documentation>
+        <Summary />
+        <LongDescription>InnoDB free: 58368 kB</LongDescription>
+      </Documentation>
+      <Column Name="FoodBeveragePWPItemPK" Member="Foodbeveragepwpitempk" Type="System.Int32" AutoSync="OnInsert" DbType="INT(10) NOT NULL AUTO_INCREMENT" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" MaxLength="0" Precision="10" Scale="0" Guid="b1865143-64f9-4b4e-97fb-b2468eacf521" />
+      <Column Name="FoodBeverageCode" Member="Foodbeveragecode" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" MaxLength="255" Guid="817b9f9c-8a26-4a06-bbed-397e4104858a" />
+      <Column Name="FoodBeveragePWPItemCode" Member="Foodbeveragepwpitemcode" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" MaxLength="255" Guid="50d453ce-6b6e-4a0f-81eb-d641601aeac9" />
+      <Column Name="FoodBeveragePWPItemDescription" Member="Foodbeveragepwpitemdescription" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="''" MaxLength="255" Unicode="true" Guid="1791f0dd-9c4f-4cdf-b969-b7594a037651" />
+      <Column Name="FoodBeveragePWPItemAlternateDescription" Member="Foodbeveragepwpitemalternatedescription" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="''" MaxLength="255" Unicode="true" Guid="98b1c8c9-28b7-45f4-90ab-70b58d681868" />
+      <Column Name="FoodBeveragePurchaseWithPurchaseBatch" Member="Foodbeveragepurchasewithpurchasebatch" Type="System.Int32" DbType="INT(10) NOT NULL" CanBeNull="false" DefaultValue="1" MaxLength="0" Precision="10" Scale="0" Guid="e24ead5c-033e-465c-8f0c-44546add9656" />
+      <Column Name="FoodBeveragePWPItemPriceOnParentItem" Member="Foodbeveragepwpitempriceonparentitem" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="False" MaxLength="255" Guid="85a14535-228a-4637-b8e3-f92c49e56217" />
+      <Column Name="FoodBeveragePWPItemHideOnReceipt" Member="Foodbeveragepwpitemhideonreceipt" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="False" MaxLength="255" Guid="08d94b0b-a984-407c-af99-ee92684803ab" />
+      <Column Name="FoodBeveragePWPItemAsRequestOnParentItem" Member="Foodbeveragepwpitemasrequestonparentitem" Type="System.String" DbType="VARCHAR(255) NOT NULL" CanBeNull="false" DefaultValue="False" MaxLength="255" Guid="889aad2b-0b5b-448b-a636-34d4c2987a93" />
+      <Column Name="FoodBeveragePWPItemPrice" Member="Foodbeveragepwpitemprice" Type="System.Double" DbType="DOUBLE(15,2)" CanBeNull="true" DefaultValue="0.00" MaxLength="0" Precision="15" Scale="2" Guid="8736d2b9-e6fd-4e93-9b37-8faaf164300e" />
+      <Association Name="Tblfoodbeverage_Tblfoodbeveragepwpitem" AssociationGuid="b678f669-63a8-4bbc-a4d1-34f3fcc85771" Member="Tblfoodbeverage" Guid="6c472ae4-fa53-4483-a613-df40ef2bcf9e" ThisKey="Foodbeveragecode" OtherKey="Foodbeveragecode" Type="Tblfoodbeverage" IsForeignKey="true" />
+      <Association Name="Tblfoodbeverage_Tblfoodbeveragepwpitem1" AssociationGuid="718e9964-8591-4db9-b033-9cac10634e80" Member="Tblfoodbeverage1" Guid="ec9d9033-3f69-485c-9f65-8a6215e63e54" ThisKey="Foodbeveragepwpitemcode" OtherKey="Foodbeveragecode" Type="Tblfoodbeverage" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

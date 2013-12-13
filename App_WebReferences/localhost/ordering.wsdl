@@ -1,0 +1,1621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://tempuri.org/dsDatabase.xsd" />
+      <s:import namespace="http://tempuri.org/dsReceiptGeneral.xsd" />
+      <s:import schemaLocation="http://localhost/pocketpcordering/ordering.asmx?schema=dsReceiptGeneral" namespace="http://tempuri.org/dsReceiptGeneral.xsd" />
+      <s:import schemaLocation="http://localhost/pocketpcordering/ordering.asmx?schema=dsDatabase" namespace="http://tempuri.org/dsDatabase.xsd" />
+      <s:element name="GetTodaySalesAmount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CounterCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTodaySalesAmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTodaySalesAmountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRevenueCenterCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CounterCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRevenueCenterCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRevenueCenterCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersion">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVersionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TryOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TryOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TryOrderResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TryOrderBuffetAlaCarte">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TryOrderBuffetAlaCarteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TryOrderBuffetAlaCarteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TryOrderWithTableNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTableName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TryOrderWithTableNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TryOrderWithTableNumberResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TryOrderWithTokenNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTokenNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TryOrderWithTokenNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TryOrderWithTokenNumberResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalesItems">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="CounterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreateNewTransactionForEachOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToBePrintedInKitchen" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintKitchenOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintBarOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintBillAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintReceiptAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintBriefReceiptAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesPax" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddOrderResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrderWithTokenNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalesItems">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="CounterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TokenNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreateNewTransactionForEachOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToBePrintedInKitchen" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintKitchenOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintBarOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintBillAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintReceiptAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintBriefReceiptAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesPax" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrderWithTokenNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddOrderWithTokenNumberResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBuffetAlaCarteOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalesItems">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="CounterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreateNewTransactionForEachOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToBePrintedInKitchen" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintKitchenOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintBarOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintBillAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintReceiptAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintBriefReceiptAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesPax" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBuffetAlaCarteOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddBuffetAlaCarteOrderResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddiPadOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalesItems" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CounterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreateNewTransactionForEachOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToBePrintedInKitchen" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintKitchenOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintBarOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintBillAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintReceiptAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintBriefReceiptAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesPax" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddiPadOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddiPadOrderResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTakeAwayOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalesItems">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="CounterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TakeAwayReference" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreateNewTransactionForEachOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToBePrintedInKitchen" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintKitchenOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToPrintBarOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintBillAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintReceiptAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintBriefReceiptAfterKitchenOrder" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesPax" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTakeAwayOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddTakeAwayOrderResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIsItemSoldOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iFBCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIsItemSoldOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetIsItemSoldOutResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDatabase">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrieveDatabaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveDatabaseResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/dsDatabase.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestSalesPK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iEmployeeCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestSalesPKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLatestSalesPKResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnySalesPKFromTableName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CounterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTableName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnySalesPKFromTableNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAnySalesPKFromTableNameResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnySalesPKFromTakeAwayReference">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CounterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTakeAwayReference" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnySalesPKFromTakeAwayReferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAnySalesPKFromTakeAwayReferenceResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSalesItemPricing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesPK" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesItemPK" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesItemPrice" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSalesItemPricingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSalesItemPricingResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GrandTotalCalculationFormula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iTransactionType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GrandTotalCalculationFormulaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GrandTotalCalculationFormulaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTotalPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesPK" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTotalPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTotalPaymentResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPrintJobToPool">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iSalesPK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iRevenueCenterCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iPrintBill" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="iPrintReceipt" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="iPrintBriefReceipt" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="iNoteDestination" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iNoteMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iBillPrintingDestination" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iToPrintOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="iToPrintKitchenOrderList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="iToPrintBarOrderList" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPrintJobToPoolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPrintJobToPoolResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnsettledTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnsettledTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnsettledTransactionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnsettledAmount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTableName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnsettledAmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnsettledAmountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnsettledAmountTakeAway">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTakeAwayReference" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnsettledAmountTakeAwayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnsettledAmountTakeAwayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddExpressCashPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesPK" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iPrintReceipt" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="iPrintBriefReceipt" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddExpressCashPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddExpressCashPaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTotalDiscount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesPK" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iPercent" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTotalDiscountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddTotalDiscountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSalesItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesPK" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSalesItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSalesItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSalesItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iSalesPK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSalesItemPK" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iEmployeeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSalesItemRemarks" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSalesItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteSalesItemResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReceiptDataset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iTransactionNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CounterCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReceiptDatasetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReceiptDatasetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/dsReceiptGeneral.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupingReceiptDataset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iTransactionNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CounterCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupingReceiptDatasetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupingReceiptDatasetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/dsReceiptGeneral.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearLicenseConflict">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearLicenseConflictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClearLicenseConflictResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDongleUser">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckDongleUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckDongleUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLicenseConflict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLicenseConflictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckLicenseConflictResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDongleUser_EMenu">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckDongleUser_EMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckDongleUser_EMenuResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLicenseConflict_EMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCounterCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLicenseConflict_EMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckLicenseConflict_EMenuResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTodaySalesAmountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTodaySalesAmount" />
+  </wsdl:message>
+  <wsdl:message name="GetTodaySalesAmountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTodaySalesAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRevenueCenterCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRevenueCenterCode" />
+  </wsdl:message>
+  <wsdl:message name="GetRevenueCenterCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRevenueCenterCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TryOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:TryOrder" />
+  </wsdl:message>
+  <wsdl:message name="TryOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:TryOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="TryOrderBuffetAlaCarteSoapIn">
+    <wsdl:part name="parameters" element="tns:TryOrderBuffetAlaCarte" />
+  </wsdl:message>
+  <wsdl:message name="TryOrderBuffetAlaCarteSoapOut">
+    <wsdl:part name="parameters" element="tns:TryOrderBuffetAlaCarteResponse" />
+  </wsdl:message>
+  <wsdl:message name="TryOrderWithTableNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:TryOrderWithTableNumber" />
+  </wsdl:message>
+  <wsdl:message name="TryOrderWithTableNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:TryOrderWithTableNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="TryOrderWithTokenNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:TryOrderWithTokenNumber" />
+  </wsdl:message>
+  <wsdl:message name="TryOrderWithTokenNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:TryOrderWithTokenNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrder" />
+  </wsdl:message>
+  <wsdl:message name="AddOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOrderWithTokenNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrderWithTokenNumber" />
+  </wsdl:message>
+  <wsdl:message name="AddOrderWithTokenNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrderWithTokenNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBuffetAlaCarteOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBuffetAlaCarteOrder" />
+  </wsdl:message>
+  <wsdl:message name="AddBuffetAlaCarteOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBuffetAlaCarteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddiPadOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:AddiPadOrder" />
+  </wsdl:message>
+  <wsdl:message name="AddiPadOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:AddiPadOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTakeAwayOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTakeAwayOrder" />
+  </wsdl:message>
+  <wsdl:message name="AddTakeAwayOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTakeAwayOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIsItemSoldOutSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIsItemSoldOut" />
+  </wsdl:message>
+  <wsdl:message name="GetIsItemSoldOutSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIsItemSoldOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDatabaseSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveDatabase" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDatabaseSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestSalesPKSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatestSalesPK" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestSalesPKSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatestSalesPKResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnySalesPKFromTableNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnySalesPKFromTableName" />
+  </wsdl:message>
+  <wsdl:message name="GetAnySalesPKFromTableNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnySalesPKFromTableNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnySalesPKFromTakeAwayReferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnySalesPKFromTakeAwayReference" />
+  </wsdl:message>
+  <wsdl:message name="GetAnySalesPKFromTakeAwayReferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnySalesPKFromTakeAwayReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSalesItemPricingSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSalesItemPricing" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSalesItemPricingSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSalesItemPricingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GrandTotalCalculationFormulaSoapIn">
+    <wsdl:part name="parameters" element="tns:GrandTotalCalculationFormula" />
+  </wsdl:message>
+  <wsdl:message name="GrandTotalCalculationFormulaSoapOut">
+    <wsdl:part name="parameters" element="tns:GrandTotalCalculationFormulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTotalPayment" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTotalPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPrintJobToPoolSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPrintJobToPool" />
+  </wsdl:message>
+  <wsdl:message name="AddPrintJobToPoolSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPrintJobToPoolResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnsettledTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnsettledTransactions" />
+  </wsdl:message>
+  <wsdl:message name="GetUnsettledTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnsettledTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnsettledAmountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnsettledAmount" />
+  </wsdl:message>
+  <wsdl:message name="GetUnsettledAmountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnsettledAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnsettledAmountTakeAwaySoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnsettledAmountTakeAway" />
+  </wsdl:message>
+  <wsdl:message name="GetUnsettledAmountTakeAwaySoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnsettledAmountTakeAwayResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddExpressCashPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddExpressCashPayment" />
+  </wsdl:message>
+  <wsdl:message name="AddExpressCashPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddExpressCashPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTotalDiscountSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTotalDiscount" />
+  </wsdl:message>
+  <wsdl:message name="AddTotalDiscountSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTotalDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSalesItem" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSalesItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSalesItemSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSalesItem" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSalesItemSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSalesItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReceiptDatasetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReceiptDataset" />
+  </wsdl:message>
+  <wsdl:message name="GetReceiptDatasetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReceiptDatasetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupingReceiptDatasetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupingReceiptDataset" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupingReceiptDatasetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupingReceiptDatasetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearLicenseConflictSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearLicenseConflict" />
+  </wsdl:message>
+  <wsdl:message name="ClearLicenseConflictSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearLicenseConflictResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDongleUserSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDongleUser" />
+  </wsdl:message>
+  <wsdl:message name="CheckDongleUserSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDongleUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckLicenseConflictSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckLicenseConflict" />
+  </wsdl:message>
+  <wsdl:message name="CheckLicenseConflictSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckLicenseConflictResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDongleUser_EMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDongleUser_EMenu" />
+  </wsdl:message>
+  <wsdl:message name="CheckDongleUser_EMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDongleUser_EMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckLicenseConflict_EMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckLicenseConflict_EMenu" />
+  </wsdl:message>
+  <wsdl:message name="CheckLicenseConflict_EMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckLicenseConflict_EMenuResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OrderingSoap">
+    <wsdl:operation name="GetTodaySalesAmount">
+      <wsdl:input message="tns:GetTodaySalesAmountSoapIn" />
+      <wsdl:output message="tns:GetTodaySalesAmountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRevenueCenterCode">
+      <wsdl:input message="tns:GetRevenueCenterCodeSoapIn" />
+      <wsdl:output message="tns:GetRevenueCenterCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <wsdl:input message="tns:GetVersionSoapIn" />
+      <wsdl:output message="tns:GetVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TryOrder">
+      <wsdl:input message="tns:TryOrderSoapIn" />
+      <wsdl:output message="tns:TryOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TryOrderBuffetAlaCarte">
+      <wsdl:input message="tns:TryOrderBuffetAlaCarteSoapIn" />
+      <wsdl:output message="tns:TryOrderBuffetAlaCarteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TryOrderWithTableNumber">
+      <wsdl:input message="tns:TryOrderWithTableNumberSoapIn" />
+      <wsdl:output message="tns:TryOrderWithTableNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TryOrderWithTokenNumber">
+      <wsdl:input message="tns:TryOrderWithTokenNumberSoapIn" />
+      <wsdl:output message="tns:TryOrderWithTokenNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <wsdl:input message="tns:AddOrderSoapIn" />
+      <wsdl:output message="tns:AddOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderWithTokenNumber">
+      <wsdl:input message="tns:AddOrderWithTokenNumberSoapIn" />
+      <wsdl:output message="tns:AddOrderWithTokenNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBuffetAlaCarteOrder">
+      <wsdl:input message="tns:AddBuffetAlaCarteOrderSoapIn" />
+      <wsdl:output message="tns:AddBuffetAlaCarteOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddiPadOrder">
+      <wsdl:input message="tns:AddiPadOrderSoapIn" />
+      <wsdl:output message="tns:AddiPadOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTakeAwayOrder">
+      <wsdl:input message="tns:AddTakeAwayOrderSoapIn" />
+      <wsdl:output message="tns:AddTakeAwayOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsItemSoldOut">
+      <wsdl:input message="tns:GetIsItemSoldOutSoapIn" />
+      <wsdl:output message="tns:GetIsItemSoldOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDatabase">
+      <wsdl:input message="tns:RetrieveDatabaseSoapIn" />
+      <wsdl:output message="tns:RetrieveDatabaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestSalesPK">
+      <wsdl:input message="tns:GetLatestSalesPKSoapIn" />
+      <wsdl:output message="tns:GetLatestSalesPKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnySalesPKFromTableName">
+      <wsdl:input message="tns:GetAnySalesPKFromTableNameSoapIn" />
+      <wsdl:output message="tns:GetAnySalesPKFromTableNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnySalesPKFromTakeAwayReference">
+      <wsdl:input message="tns:GetAnySalesPKFromTakeAwayReferenceSoapIn" />
+      <wsdl:output message="tns:GetAnySalesPKFromTakeAwayReferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSalesItemPricing">
+      <wsdl:input message="tns:UpdateSalesItemPricingSoapIn" />
+      <wsdl:output message="tns:UpdateSalesItemPricingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GrandTotalCalculationFormula">
+      <wsdl:input message="tns:GrandTotalCalculationFormulaSoapIn" />
+      <wsdl:output message="tns:GrandTotalCalculationFormulaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalPayment">
+      <wsdl:input message="tns:GetTotalPaymentSoapIn" />
+      <wsdl:output message="tns:GetTotalPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPrintJobToPool">
+      <wsdl:input message="tns:AddPrintJobToPoolSoapIn" />
+      <wsdl:output message="tns:AddPrintJobToPoolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsettledTransactions">
+      <wsdl:input message="tns:GetUnsettledTransactionsSoapIn" />
+      <wsdl:output message="tns:GetUnsettledTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsettledAmount">
+      <wsdl:input message="tns:GetUnsettledAmountSoapIn" />
+      <wsdl:output message="tns:GetUnsettledAmountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsettledAmountTakeAway">
+      <wsdl:input message="tns:GetUnsettledAmountTakeAwaySoapIn" />
+      <wsdl:output message="tns:GetUnsettledAmountTakeAwaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddExpressCashPayment">
+      <wsdl:input message="tns:AddExpressCashPaymentSoapIn" />
+      <wsdl:output message="tns:AddExpressCashPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTotalDiscount">
+      <wsdl:input message="tns:AddTotalDiscountSoapIn" />
+      <wsdl:output message="tns:AddTotalDiscountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesItem">
+      <wsdl:input message="tns:GetSalesItemSoapIn" />
+      <wsdl:output message="tns:GetSalesItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSalesItem">
+      <wsdl:input message="tns:DeleteSalesItemSoapIn" />
+      <wsdl:output message="tns:DeleteSalesItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptDataset">
+      <wsdl:input message="tns:GetReceiptDatasetSoapIn" />
+      <wsdl:output message="tns:GetReceiptDatasetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupingReceiptDataset">
+      <wsdl:input message="tns:GetGroupingReceiptDatasetSoapIn" />
+      <wsdl:output message="tns:GetGroupingReceiptDatasetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearLicenseConflict">
+      <wsdl:input message="tns:ClearLicenseConflictSoapIn" />
+      <wsdl:output message="tns:ClearLicenseConflictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDongleUser">
+      <wsdl:input message="tns:CheckDongleUserSoapIn" />
+      <wsdl:output message="tns:CheckDongleUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLicenseConflict">
+      <wsdl:input message="tns:CheckLicenseConflictSoapIn" />
+      <wsdl:output message="tns:CheckLicenseConflictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDongleUser_EMenu">
+      <wsdl:input message="tns:CheckDongleUser_EMenuSoapIn" />
+      <wsdl:output message="tns:CheckDongleUser_EMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLicenseConflict_EMenu">
+      <wsdl:input message="tns:CheckLicenseConflict_EMenuSoapIn" />
+      <wsdl:output message="tns:CheckLicenseConflict_EMenuSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderingSoap" type="tns:OrderingSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTodaySalesAmount">
+      <soap:operation soapAction="http://tempuri.org/GetTodaySalesAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRevenueCenterCode">
+      <soap:operation soapAction="http://tempuri.org/GetRevenueCenterCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <soap:operation soapAction="http://tempuri.org/GetVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryOrder">
+      <soap:operation soapAction="http://tempuri.org/TryOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryOrderBuffetAlaCarte">
+      <soap:operation soapAction="http://tempuri.org/TryOrderBuffetAlaCarte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryOrderWithTableNumber">
+      <soap:operation soapAction="http://tempuri.org/TryOrderWithTableNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryOrderWithTokenNumber">
+      <soap:operation soapAction="http://tempuri.org/TryOrderWithTokenNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <soap:operation soapAction="http://tempuri.org/AddOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderWithTokenNumber">
+      <soap:operation soapAction="http://tempuri.org/AddOrderWithTokenNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBuffetAlaCarteOrder">
+      <soap:operation soapAction="http://tempuri.org/AddBuffetAlaCarteOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddiPadOrder">
+      <soap:operation soapAction="http://tempuri.org/AddiPadOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTakeAwayOrder">
+      <soap:operation soapAction="http://tempuri.org/AddTakeAwayOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsItemSoldOut">
+      <soap:operation soapAction="http://tempuri.org/GetIsItemSoldOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDatabase">
+      <soap:operation soapAction="http://tempuri.org/RetrieveDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestSalesPK">
+      <soap:operation soapAction="http://tempuri.org/GetLatestSalesPK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnySalesPKFromTableName">
+      <soap:operation soapAction="http://tempuri.org/GetAnySalesPKFromTableName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnySalesPKFromTakeAwayReference">
+      <soap:operation soapAction="http://tempuri.org/GetAnySalesPKFromTakeAwayReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSalesItemPricing">
+      <soap:operation soapAction="http://tempuri.org/UpdateSalesItemPricing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrandTotalCalculationFormula">
+      <soap:operation soapAction="http://tempuri.org/GrandTotalCalculationFormula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalPayment">
+      <soap:operation soapAction="http://tempuri.org/GetTotalPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPrintJobToPool">
+      <soap:operation soapAction="http://tempuri.org/AddPrintJobToPool" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsettledTransactions">
+      <soap:operation soapAction="http://tempuri.org/GetUnsettledTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsettledAmount">
+      <soap:operation soapAction="http://tempuri.org/GetUnsettledAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsettledAmountTakeAway">
+      <soap:operation soapAction="http://tempuri.org/GetUnsettledAmountTakeAway" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExpressCashPayment">
+      <soap:operation soapAction="http://tempuri.org/AddExpressCashPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTotalDiscount">
+      <soap:operation soapAction="http://tempuri.org/AddTotalDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesItem">
+      <soap:operation soapAction="http://tempuri.org/GetSalesItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSalesItem">
+      <soap:operation soapAction="http://tempuri.org/DeleteSalesItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptDataset">
+      <soap:operation soapAction="http://tempuri.org/GetReceiptDataset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupingReceiptDataset">
+      <soap:operation soapAction="http://tempuri.org/GetGroupingReceiptDataset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearLicenseConflict">
+      <soap:operation soapAction="http://tempuri.org/ClearLicenseConflict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDongleUser">
+      <soap:operation soapAction="http://tempuri.org/CheckDongleUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLicenseConflict">
+      <soap:operation soapAction="http://tempuri.org/CheckLicenseConflict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDongleUser_EMenu">
+      <soap:operation soapAction="http://tempuri.org/CheckDongleUser_EMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLicenseConflict_EMenu">
+      <soap:operation soapAction="http://tempuri.org/CheckLicenseConflict_EMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrderingSoap12" type="tns:OrderingSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTodaySalesAmount">
+      <soap12:operation soapAction="http://tempuri.org/GetTodaySalesAmount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRevenueCenterCode">
+      <soap12:operation soapAction="http://tempuri.org/GetRevenueCenterCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <soap12:operation soapAction="http://tempuri.org/GetVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryOrder">
+      <soap12:operation soapAction="http://tempuri.org/TryOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryOrderBuffetAlaCarte">
+      <soap12:operation soapAction="http://tempuri.org/TryOrderBuffetAlaCarte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryOrderWithTableNumber">
+      <soap12:operation soapAction="http://tempuri.org/TryOrderWithTableNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryOrderWithTokenNumber">
+      <soap12:operation soapAction="http://tempuri.org/TryOrderWithTokenNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <soap12:operation soapAction="http://tempuri.org/AddOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderWithTokenNumber">
+      <soap12:operation soapAction="http://tempuri.org/AddOrderWithTokenNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBuffetAlaCarteOrder">
+      <soap12:operation soapAction="http://tempuri.org/AddBuffetAlaCarteOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddiPadOrder">
+      <soap12:operation soapAction="http://tempuri.org/AddiPadOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTakeAwayOrder">
+      <soap12:operation soapAction="http://tempuri.org/AddTakeAwayOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsItemSoldOut">
+      <soap12:operation soapAction="http://tempuri.org/GetIsItemSoldOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDatabase">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveDatabase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestSalesPK">
+      <soap12:operation soapAction="http://tempuri.org/GetLatestSalesPK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnySalesPKFromTableName">
+      <soap12:operation soapAction="http://tempuri.org/GetAnySalesPKFromTableName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnySalesPKFromTakeAwayReference">
+      <soap12:operation soapAction="http://tempuri.org/GetAnySalesPKFromTakeAwayReference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSalesItemPricing">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSalesItemPricing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrandTotalCalculationFormula">
+      <soap12:operation soapAction="http://tempuri.org/GrandTotalCalculationFormula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalPayment">
+      <soap12:operation soapAction="http://tempuri.org/GetTotalPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPrintJobToPool">
+      <soap12:operation soapAction="http://tempuri.org/AddPrintJobToPool" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsettledTransactions">
+      <soap12:operation soapAction="http://tempuri.org/GetUnsettledTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsettledAmount">
+      <soap12:operation soapAction="http://tempuri.org/GetUnsettledAmount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsettledAmountTakeAway">
+      <soap12:operation soapAction="http://tempuri.org/GetUnsettledAmountTakeAway" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExpressCashPayment">
+      <soap12:operation soapAction="http://tempuri.org/AddExpressCashPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTotalDiscount">
+      <soap12:operation soapAction="http://tempuri.org/AddTotalDiscount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesItem">
+      <soap12:operation soapAction="http://tempuri.org/GetSalesItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSalesItem">
+      <soap12:operation soapAction="http://tempuri.org/DeleteSalesItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptDataset">
+      <soap12:operation soapAction="http://tempuri.org/GetReceiptDataset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupingReceiptDataset">
+      <soap12:operation soapAction="http://tempuri.org/GetGroupingReceiptDataset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearLicenseConflict">
+      <soap12:operation soapAction="http://tempuri.org/ClearLicenseConflict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDongleUser">
+      <soap12:operation soapAction="http://tempuri.org/CheckDongleUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLicenseConflict">
+      <soap12:operation soapAction="http://tempuri.org/CheckLicenseConflict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDongleUser_EMenu">
+      <soap12:operation soapAction="http://tempuri.org/CheckDongleUser_EMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLicenseConflict_EMenu">
+      <soap12:operation soapAction="http://tempuri.org/CheckLicenseConflict_EMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Ordering">
+    <wsdl:port name="OrderingSoap" binding="tns:OrderingSoap">
+      <soap:address location="http://localhost/pocketpcordering/ordering.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OrderingSoap12" binding="tns:OrderingSoap12">
+      <soap12:address location="http://localhost/pocketpcordering/ordering.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

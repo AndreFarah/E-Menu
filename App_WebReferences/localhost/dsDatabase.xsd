@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/dsDatabase.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://tempuri.org/dsDatabase.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/dsDatabase.xsd" id="dsDatabase" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="dsDatabase">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblFBGroup">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="FBGroupCode" type="xs:string" />
+              <xs:element minOccurs="0" name="FBGroupDescription" type="xs:string" />
+              <xs:element minOccurs="0" name="FBGroupAlternateDescription" type="xs:string" />
+              <xs:element minOccurs="0" name="FBGroupMenuType" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblFBCode">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="FBCode" type="xs:string" />
+              <xs:element minOccurs="0" name="FBDescription" type="xs:string" />
+              <xs:element minOccurs="0" name="FBAlternateDescription" type="xs:string" />
+              <xs:element minOccurs="0" name="FBGroupCode" type="xs:string" />
+              <xs:element minOccurs="0" name="FBPrice" type="xs:double" />
+              <xs:element minOccurs="0" name="FBHappyHourPrice" type="xs:double" />
+              <xs:element minOccurs="0" name="FBSecondHappyHourPrice" type="xs:double" />
+              <xs:element minOccurs="0" name="FBThirdHappyHourPrice" type="xs:double" />
+              <xs:element minOccurs="0" name="FBIsNettPrice" type="xs:string" />
+              <xs:element minOccurs="0" name="FBGroupMenuType" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="TableName" type="xs:string" />
+              <xs:element minOccurs="0" name="TableDescription" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblEmployee">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="EmployeeCode" type="xs:string" />
+              <xs:element minOccurs="0" name="EmployeeName" type="xs:string" />
+              <xs:element minOccurs="0" name="UserPIN" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblGeneralRequest">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="GeneralRequest" type="xs:string" />
+              <xs:element minOccurs="0" name="GeneralRequestPrice" type="xs:double" />
+              <xs:element minOccurs="0" name="FBGroupMenuType" type="xs:string" />
+              <xs:element minOccurs="0" name="GeneralRequestPK" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblFBRequest">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="FBRequest" type="xs:string" />
+              <xs:element minOccurs="0" name="FBRequestPrice" type="xs:double" />
+              <xs:element minOccurs="0" name="FBCode" type="xs:string" />
+              <xs:element minOccurs="0" name="FBRequestPK" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblPWPItems">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="FBCode" type="xs:string" />
+              <xs:element minOccurs="0" name="PWPFBCode" type="xs:string" />
+              <xs:element minOccurs="0" name="PWPDescription" type="xs:string" />
+              <xs:element minOccurs="0" name="PWPAlternateDescription" type="xs:string" />
+              <xs:element minOccurs="0" name="PWPItemPrice" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblBundleItems">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="FBCode" type="xs:string" />
+              <xs:element minOccurs="0" name="BundleFBCode" type="xs:string" />
+              <xs:element minOccurs="0" name="BundleFBDescription" type="xs:string" />
+              <xs:element minOccurs="0" name="BundleFBAlternateDescription" type="xs:string" />
+              <xs:element minOccurs="0" name="BundleFBPrice" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblFBMenuType">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="FBGroupMenuType" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
